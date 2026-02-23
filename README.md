@@ -1,24 +1,67 @@
-# ATM Surveillance Alert Automation System
+<div align="center">
 
-## Overview
-A ML-based system for ATM surveillance using YOLOv8 for detection and ensemble ML (SVM, DT, RF) for true/false alert classification. Features: Fire/smoke detection, helmet check, behavioral analysis.
+# SentinelVision 🛡️📹  
+**ATM Surveillance Alert Automation System**
 
-## Setup
-1. Install: `pip install -r requirements.txt`
-2. Download datasets (see below).
-3. Preprocess: `python preprocess.py`
-4. Train: `python train_yolo.py` & `python train_ml.py`
-5. Run: `streamlit run app.py`
+**Real-time ATM security monitoring** powered by **YOLOv8** object detection + **ensemble ML** (SVM, Decision Tree, Random Forest) for intelligent **true/false alert classification**.
 
-## Structure
-- `data/`: Raw datasets.
-- `data_yolo/`: Processed for YOLO.
-- `models/`: Trained weights.
-- `utils/`: Helpers.
+</div>
 
-## Datasets
-See download section below.
+## 🌟 What is SentinelVision?
 
-## Demo
-Upload video in app for real-time alerts + analytics.
+An intelligent, ML-driven **ATM surveillance system** that:
 
+- 🔥 Detects **fire** & **smoke** instantly
+- ⛑️ Checks for **helmet usage** (suspicious masked activity)
+- 🧠 Performs **behavioral analysis** to spot anomalies
+- 🚨 Filters **false positives** using ensemble classifiers (SVM + DT + RF)
+- 📊 Provides real-time alerts + analytics dashboard
+
+Perfect for enhancing ATM security, reducing manual monitoring, and preventing fraud/fire incidents.
+
+## ✨ Key Features
+
+- 🟢 **YOLOv8** powered real-time object detection (fire, smoke, helmet, person, suspicious objects)
+- 🧩 **Ensemble ML** post-processing → drastically reduces false alarms
+- 📹 Supports **video files**, **webcam**, **RTSP/IP camera feeds**
+- 🎨 Beautiful **Streamlit web app** for upload, live view & analytics
+- 📈 Dashboard shows: alert count, confidence scores, timeline, false-positive rate
+- 🔔 Instant visual + (optional) notification alerts
+
+## 🛠️ Tech Stack
+
+| Component              | Technology                          | Purpose                              |
+|------------------------|-------------------------------------|--------------------------------------|
+| Object Detection       | YOLOv8 (Ultralytics)                | Fast & accurate detection            |
+| Alert Classification   | Scikit-learn (SVM, DT, RF)          | True/False alert filtering           |
+| Web Interface          | Streamlit                           | Interactive demo & dashboard         |
+| Data Handling          | OpenCV, NumPy, Pandas               | Video processing & feature extraction|
+| Visualization          | Matplotlib / Plotly (inside Streamlit) | Analytics charts                  |
+
+## 🚀 Quick Start
+
+```bash
+# 1. Clone the repo
+git clone https://github.com/YOUR_USERNAME/SentinelVision.git
+cd SentinelVision
+
+# 2. Create & activate virtual environment (recommended)
+python -m venv venv
+source venv/bin/activate          # Linux/macOS
+venv\Scripts\activate             # Windows
+
+# 3. Install dependencies
+pip install -r requirements.txt
+
+# 4. (Important) Download datasets & place in data/
+#    → See Datasets section below
+
+# 5. Preprocess data for YOLO
+python preprocess.py
+
+# 6. Train models (YOLO + ML ensemble)
+python train_yolo.py
+python train_ml.py
+
+# 7. Launch the awesome Streamlit app! 🎉
+streamlit run app.py
